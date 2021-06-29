@@ -1,0 +1,111 @@
+.vacancy {
+	padding-bottom: 65px;
+	&__heading {
+		margin-top: 20px;
+		margin-bottom: 45px;
+		font-style: normal;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 36px;
+	}
+
+	.vacancy__list {
+		display: flex;
+		flex-direction: column;
+		border-top: 2px solid $gray2;
+		.vacancy__block {
+			display: flex;
+			justify-content: space-between;
+			border-bottom: 2px solid $gray2;
+			overflow: hidden;
+			padding: 15px 0;
+			transition: 0.2s;
+			max-height: 72px;
+			.vacancy__info {
+				display: flex;
+				flex-direction: column;
+				.vacancy__toggle {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					padding: 10px 0;
+					position: relative;
+					cursor: pointer;
+					h3 {
+						font-size: 21px;
+						font-weight: 500px;
+						padding-left: 30px;
+					}
+					&::before {
+						content: '';
+						width: 18px;
+						height: 2px;
+						background-color: $blue;
+						position: absolute;
+						left: 0;
+						display: inline-flex;
+					}
+					&::after {
+						content: '';
+						width: 18px;
+						height: 2px;
+						background-color: $blue;
+						position: absolute;
+						left: 0;
+						transform: rotate(90deg);
+						display: inline-flex;
+						transition: 0.2s;
+					}
+					@media screen and (max-width: 768px) {
+		  				h3 {
+		  					font-size: 17px;
+		  				}
+					}
+				}
+				.vacancy__content {
+					margin-left: 30px;
+					padding: 10px 0;
+					font-size: 14px;
+					opacity: 0;
+					transition: 0.5s;
+					p {
+						margin-bottom: 10px;
+					}
+				}
+			}
+			.vacancy__img {
+				display: flex;
+				justify-content: flex-end;
+				picture {
+					display: block;
+					img {
+						width: 100%;
+						opacity: 0;
+					}
+				}
+			}
+			&.active {
+				max-height: 1080px;
+				.vacancy__content {
+					opacity: 1;
+				}
+				.vacancy__info {
+					display: flex;
+					flex-direction: column;
+					.vacancy__toggle {
+						&::after {
+							transform: rotate(0);
+						}
+					}
+				}
+				.vacancy__img {
+					picture {
+						img {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

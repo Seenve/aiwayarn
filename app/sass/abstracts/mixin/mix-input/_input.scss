@@ -1,0 +1,43 @@
+// input style custom
+// пример: @include input($green,$black,$black,.5s);
+@mixin input($bsh: transparentize(red, 0.3), $bdc: gray, $pl: gray, $timetransit: 0.15s) {
+    display: inline-block;
+    height: 48px;
+    padding: 14px 18px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: $gray;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid $bdc;
+    border-radius: 5px;
+    box-shadow: inset 0 0 1px $bdc;
+    transition: border-color ease-in-out $timetransit, box-shadow ease-in-out $timetransit;
+    -webkit-appearance: none;
+  
+    &:focus{
+      border-color: $bsh;
+      outline: 0;
+      -webkit-box-shadow: inset 0 0 1px $bdc, 0 0 8px $bsh;
+      box-shadow: inset 0 0 1px $bdc, 0 0 8px $bsh;
+    }
+  
+    &::-moz-placeholder{
+      color: $pl;
+      opacity: 1;
+    }
+  
+    &:-ms-input-placeholder{
+      color: $pl;
+    }
+  
+    &::-webkit-input-placeholder{
+      color: $pl;
+    }
+  
+    &::-ms-expand {
+      background-color: transparent;
+      border: 0;
+    }
+  }
+  

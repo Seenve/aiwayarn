@@ -1,0 +1,147 @@
+.special {
+    padding: 68px 0 39px 0;
+
+    h4 {
+        @media screen and (max-width: $screen-sm) {
+            margin-bottom: 15px;
+        }
+    }
+
+    @media screen and (min-width: $screen-md) {
+        margin-bottom: 80px;
+    }
+
+    &__top {
+        position: relative;
+        height: 46px;
+        @media screen and (min-width: $screen-md) {
+            margin: 31px 0;
+        }
+        &:after {
+           display: none;
+           @media screen and (min-width: $screen-md) { 
+                @include pseudo();
+                bottom: 0px;
+                width: 100%;
+                height: 2px;
+                background-color: $gray2;
+           }
+        }
+    }
+
+    &__header {
+        // display: none;
+        @media screen and (min-width: $screen-md) { 
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__btn {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-weight: bold;
+        @media screen and (min-width: $screen-md) { 
+            display: none;
+        }
+        
+        svg {
+            margin-left: 10px;
+            transition: all .4s;
+        }
+    }
+
+    &__list {
+        background-color: $white;
+        @media screen and (max-width: 768px) {
+            background-color: $white;
+            z-index: 999;
+            display: none;
+            position: absolute;
+            box-shadow: 0 20px 40px rgba(0,0,0,.2);
+            padding: 15px;
+            margin-top: 5px;
+            li {
+                margin-bottom: 10px;
+            }
+        }
+        @media screen and (min-width: $screen-md) {
+            display: flex;
+            align-items: center;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            min-height: 40px;
+        }
+ 
+        @media screen and (min-width: $screen-xl) {
+            overflow: initial;
+        }
+    }
+
+    &__item {
+        margin-right: 20px;
+        @media screen and (max-width: 1200px) {
+            margin-right: 20px;
+        }
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    &__link {
+        font-size: 13px;
+        color: $gray;
+        position: relative;
+        @media screen and (min-width: $screen-md) {
+            white-space: nowrap;
+        }
+        @media screen and (min-width: $screen-xl){
+            font-size: 14px;
+        }
+        &:hover {
+            &::before {
+                background-color: $purple;
+            }
+        }
+    }
+
+    &__link.active-link {
+        color: $purple2;
+        &::before {
+            display: none;
+            @media screen and (min-width: $screen-md) { 
+                @include pseudo();
+                bottom: -16px;
+                width: 100%;
+                height: 2px;
+                background-color: $purple;
+                z-index: 1;
+            }
+        }
+    }
+
+
+
+    &__body {
+       margin-top: 0px;
+       @media screen and (min-width: $screen-md){
+            margin-top: 0;
+       } 
+    }
+}
+
+.special-carousel {
+    &__item {
+        transition: all .3s;
+        &:hover {
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &__link {
+        display: flex;
+    }
+}
+

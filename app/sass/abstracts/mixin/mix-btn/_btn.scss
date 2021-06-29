@@ -1,0 +1,80 @@
+  /* Пример @include btn(256px, 60px, transparent, $white, #005c01 ,$white, 2px solid $white); */
+  @mixin btn($width,$height: 60px){
+    width:$width;
+    height:$height;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    align-self: center;
+    outline: none;
+  }
+
+/* Пример @include button-bg(#000000); */
+/* button */
+
+@mixin button-bg($bg,$btn_text_color) {
+    background-color: $bg;
+    color: $btn_text_color;
+    transition: all 0.4s ease;
+    &:hover {
+      color: $btn_text_color;
+      transition: all 0.4s ease;
+    }
+    @media screen and (max-width: 480px){
+      width: 100%;
+    }
+  }
+
+/* Пример @include button-outline(#000000); */
+/* button */
+
+@mixin button-outline($bg, $btn_text_color, $border) {
+    background-color: $bg;
+    color: $btn_text_color;
+    border: $border;
+    transition: all 0.4s ease;
+    &:hover {
+      transition: all 0.4s ease;
+    }
+  }
+
+
+  @mixin link($def-color: #000, $color: $blue){
+    color: $def-color;
+    transition: all .2s ease-out;
+    svg path{
+      transition: all .2s ease-out;
+    }
+    &:hover {
+      color: $color;
+      svg path {
+        fill: $color;
+      }
+    }
+  }
+
+  @mixin link_hover($background-color, $color){
+    transition: all .2s ease-out;
+    &:hover {
+      color: $color;
+      background-color: $background-color;
+      transition: all .2s ease-out;
+    }
+  }
+  
+  @mixin link_hover_bot_border($color, $border){
+    transition: all .3s ease-out;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      color: $color;
+      border-bottom: $border;
+      transition: all .3s ease-out;
+    }
+  }
+
+  /* END buttons */
+

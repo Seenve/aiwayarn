@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+}
+
+.striped tr {
+  &:nth-child(even) {
+    background: #F7F7F7;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  table tr p {
+    font-size: 0.725rem;
+    }
+}
+
+
+
+
+.tab-content table {
+  width: 100%!important;
+  border: none;
+    tr {
+      &:nth-child(even) {
+        background: #F7F7F7;
+      }
+      td {
+        border: none;
+        &:nth-child(2) {
+          text-align: right;
+        }
+      }
+  }
+}
+
+

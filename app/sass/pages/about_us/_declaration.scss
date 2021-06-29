@@ -1,0 +1,60 @@
+.declaration {
+    padding: 46px 0;
+    @media screen and (min-width: $screen-md){
+        padding: 90px 0 73px 0;    
+    }
+
+    &__title {
+        @media screen and (min-width: $screen-md) {
+             margin-bottom: 34px;
+        }
+    }
+
+    &__text {
+        @media screen and (min-width: $screen-md) {
+            margin-bottom: 40px;
+       }
+    }
+    
+    &__list-sert {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-top: 34px;
+        @media screen and (min-width: $screen-md) { 
+            margin-top: 0px;
+        }
+    }
+
+    &__item-sert {
+        display: flex;
+        justify-content: center;
+        margin-right: 11px;
+        display: none;
+        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+        &:first-child {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        @media screen and (min-width: $screen-md) { 
+            display: flex;
+            justify-content: center;
+            margin-right: 11px;
+            width: 33%;
+            &:first-child {
+                width: 33%;
+            }
+        }
+
+        @media screen and (min-width: $screen-xs) {
+            img {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+}

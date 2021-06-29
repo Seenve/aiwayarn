@@ -1,0 +1,336 @@
+.footer {
+    padding: 40px 0 40px 0;
+    position: relative;
+    background-color: $black3;
+    color: #818c96;
+
+    a {
+        font-weight: 400;
+        font-size: 14px;
+        color: #c6ced6;
+        &:hover {
+            color: $white;
+        }
+    }
+    a.active {
+        color: $gray;
+    }
+
+    &__logo {
+        img {
+            max-width: 85px;
+        }
+    }
+
+    small {
+        font-size: 12px;
+    }
+
+    &__right {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @media screen and (max-width: 960px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__pay {
+        width: 50px;
+        height: 25px;
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 3px;
+        margin-left: 5px;
+    }
+
+    &__pays {
+        margin-top: 40px;
+        position: relative;
+        padding-top: 20px;
+        &:before {
+            @include pseudo();
+            top: 0;
+            left: 15px;
+            width: calc(100% - 30px);
+            height: 1px;
+            background-color: rgba(255,255,255,0.1);
+        }
+    }
+
+    &__copy {
+        margin-top: 15px;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        color: $white;
+        font-weight: 700;
+        position: relative;
+        padding-left: 15px;
+        font-size: 14px;
+        text-transform: uppercase;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+            background-color: $blue;
+        }
+        @media screen and (max-width: 960px) {
+            margin-top: 15px;
+        }
+    }
+
+    &__menu {
+        li {
+            margin-bottom: 6px;
+            i {
+                color: #818c96;
+                width: 30px;
+            }
+        }
+    }
+    &__list {
+        li {
+            margin-bottom: 0px;
+            i {
+                color: #818c96;
+                width: 25px;
+                font-size: 12px;
+            }
+        }
+    }
+    &__socials {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            i {
+                color: $white;
+                width: auto;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+
+
+.pays {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @media screen and (max-width: 960px) {
+        justify-content: flex-end;
+    }
+}
+footer .pays i {
+    display: inline-block;
+    background: url(/assets/icons/payment.svg) 0 0 no-repeat;
+    margin-left: 15px;
+    opacity: .5
+}
+footer .pays i:hover {
+    opacity: 1
+}
+footer .pays i.cacsh {
+    width: 20px;
+    height: 20px;
+    background-position: 0 -298px
+}
+footer .light .pays i.cacsh {
+    background-position: 0 -248px
+}
+footer .pays i.cacsh:hover {
+    background-position: 0 -198px
+}
+footer .pays i.mastercard {
+    width: 24px;
+    height: 16px;
+    background-position: -279px -300px
+}
+footer .light .pays i.mastercard {
+    background-position: -279px -250px
+}
+footer .pays i.mastercard:hover {
+    background-position: -327px -200px
+}
+footer .pays i.visa {
+    width: 32px;
+    height: 10px;
+    background-position: -40px -304px
+}
+footer .light .pays i.visa {
+    background-position: -40px -254px
+}
+footer .pays i.visa:hover {
+    background-position: -40px -204px
+}
+footer .pays i.yandex_money {
+    width: 15px;
+    height: 19px;
+    background-position: -92px -298px
+}
+footer .light .pays i.yandex_money {
+    background-position: -92px -248px
+}
+footer .pays i.yandex_money:hover {
+    background-position: -92px -198px
+}
+footer .pays i.webmoney {
+    width: 17px;
+    height: 18px;
+    background-position: -127px -299px
+}
+footer .light .pays i.webmoney {
+    background-position: -127px -249px
+}
+footer .pays i.webmoney:hover {
+    background-position: -127px -199px
+}
+footer .pays i.qiwi {
+    width: 19px;
+    height: 20px;
+    background-position: -165px -298px
+}
+footer .light .pays i.qiwi {
+    background-position: -165px -248px
+}
+footer .pays i.qiwi:hover {
+    background-position: -165px -198px
+}
+footer .pays i.sbrf {
+    width: 19px;
+    height: 20px;
+    background-position: -240px -298px
+}
+footer .light .pays i.sbrf {
+    background-position: -240px -248px
+}
+footer .pays i.sbrf:hover {
+    background-position: -240px -198px
+}
+footer .pays i.alfa {
+    width: 14px;
+    height: 19px;
+    background-position: -323px -298px
+}
+footer .light .pays i.alfa {
+    background-position: -323px -248px
+}
+footer .pays i.alfa:hover {
+    background-position: -415px -198px
+}
+footer .pays i.mir {
+    width: 36px;
+    height: 20px;
+    background-position: -357px -298px
+}
+footer .light .pays i.mir {
+    background-position: -357px -248px
+}
+footer .pays i.mir:hover {
+    background-position: -449px -198px
+}
+footer .pays i.jcb {
+    width: 22px;
+    height: 19px;
+    background-position: -412px -298px
+}
+footer .light .pays i.jcb {
+    background-position: -412px -248px
+}
+footer .pays i.jcb:hover {
+    background-position: -504px -198px
+}
+footer .pays i.paypal {
+    width: 15px;
+    height: 19px;
+    background-position: -205px -298px
+}
+footer .light .pays i.paypal {
+    background-position: -205px -248px
+}
+footer .pays i.paypal:hover {
+    background-position: -205px -198px
+}
+footer .pays i.maestro {
+    width: 24px;
+    height: 16px;
+    background-position: -279px -300px
+}
+footer .light .pays i.maestro {
+    background-position: -279px -250px
+}
+footer .pays i.maestro:hover {
+    background-position: -371px -200px
+}
+footer .pays i.yoomoney {
+    width: 25px;
+    height: 18px;
+    background-position: -534px -299px
+}
+footer .light .pays i.yoomoney {
+    background-position: -534px -249px
+}
+footer .pays i.yoomoney:hover {
+    background-position: -626px -199px
+}
+footer .pays i.yookassa {
+    width: 25px;
+    height: 18px;
+    background-position: -534px -299px
+}
+footer .light .pays i.yookassa {
+    background-position: -534px -249px
+}
+footer .pays i.yookassa:hover {
+    background-position: -671px -199px
+}
+footer .pays i.belkart {
+    width: 20px;
+    height: 20px;
+    background-position: -579px -298px
+}
+footer .light .pays i.belkart {
+    background-position: -579px -248px
+}
+footer .pays i.belkart:hover {
+    background-position: -716px -198px
+}
+footer .pays i.halva {
+    width: 18px;
+    height: 18px;
+    background-position: -619px -299px
+}
+footer .light .pays i.halva {
+    background-position: -619px -249px
+}
+footer .pays i.halva:hover {
+    background-position: -756px -199px
+}
+footer .pays i.tinkoff {
+    width: 63px;
+    height: 16px;
+    background-position: -657px -300px
+}
+footer .light .pays i.tinkoff {
+    background-position: -794px -199px
+}
+footer .pays i.tinkoff:hover {
+    background-position: -657px -300px
+}
+footer .light .pays i.tinkoff:hover {
+    background-position: -794px -199px
+}

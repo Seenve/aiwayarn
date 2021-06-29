@@ -1,0 +1,40 @@
+.pagination {
+	background: transparent;
+	display: flex;
+	flex-wrap: wrap;
+	li {
+		margin-right: 9px;
+		a, span {
+			display: block;
+			height: 35px;
+			color: #818181;
+			line-height: 34px;
+			font-size: 14px;
+			font-weight: 500;
+			&.next {
+				margin-left: 9px;
+			}
+			&.prev {
+				margin-right: 9px;
+			}
+		}
+		a {
+			&:hover {
+				border-color: $gray;
+				color: $gray;
+				background-size: 0% 1px;
+			}
+		}
+		.box {
+			width: 35px;
+			border: 1px solid #D6D6D6;
+			border-radius: $radius;
+			text-align: center;
+			&.current {
+				background-color: $purple_btn;
+				border-color: $purple_btn;
+				color: #fff;
+			}
+		}
+	}
+}

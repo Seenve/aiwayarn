@@ -1,0 +1,22 @@
+RewriteEngine On
+RewriteBase /
+
+<IfModule mod_php7.c>
+    #php_flag session.use_trans_sid on
+    #php_value mbstring.func_overload 2
+    #php_value mbstring.internal_encoding UTF-8
+    php_value display_errors off
+    php_value display_startup_errors off
+</IfModule>
+
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files "fun.php">
+Order Allow,Deny
+Deny from all
+</Files>
+
+Options All -Indexes

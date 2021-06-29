@@ -1,0 +1,92 @@
+// load fonts
+
+$h1-font-sizes: (
+        null  : 2rem,
+        480px : 2rem,
+        640px : 2rem,
+        1024px: 2rem
+);
+
+$h2-font-sizes: (
+        null  : 1.6rem,
+        480px : 1.6rem,
+        640px : 1.7rem,
+        1024px: 2rem
+);
+
+$h3-font-sizes: (
+        null  : 1.2rem,
+        480px : 1.5rem,
+        640px : 1.6rem,
+        1024px: 1.75rem
+);
+
+$h4-font-sizes: (
+        null  : 1.1rem,
+        480px : 1.5rem,
+        640px : 1.6rem,
+        1024px: 1.75rem
+);
+
+$h5-font-sizes: (
+        null  : 1.0rem,
+        480px : 1.0rem,
+        640px : 1.1rem,
+        1024px: 1.1rem
+);
+
+$h6-font-sizes: (
+        null  : 0.9rem,
+        480px : 0.9rem,
+        640px : 1rem,
+        1024px: 1rem
+);
+
+$p-font-sizes: (
+        null  : 1rem,
+        480px : 1rem,
+        640px : 1rem,
+        1024px: 1rem
+);
+
+
+h1 {
+  @include font-size($h1-font-sizes);
+  line-height: 1em;
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+  line-height: 1em;
+} 
+
+h3 {
+  @include font-size($h3-font-sizes);
+  line-height: 1em;
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+  line-height: 1em;
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+  line-height: 1.2em;
+}
+
+h6 {
+  @include font-size($h6-font-sizes);
+  line-height: 1em;
+}
+
+p {
+  @include font-size($p-font-sizes);
+  line-height: 1.64em;
+}
+
+span {
+  line-height: 1em;
+}
+
+//setting fonts

@@ -1,0 +1,102 @@
+/* tipografy */
+$top_text     : 2.5rem;
+$middle_text  : 2rem;
+$small_text   : 1.75rem;
+$default_text : 1rem;
+$mini_text    : 13px;
+
+$h1-font-sizes: (
+        null  : 1.4rem,
+        480px : 1.7rem,
+        640px : 2.2rem,
+        1024px: 2.5rem
+);
+
+$big-h2-font-sizes: (
+        null  : 2rem,
+        480px : 2rem,
+        640px : 2.5rem,
+        1024px: 3.5rem
+);
+
+$h2-font-sizes: (
+        null  : 1.5rem,
+        480px : 1.6rem,
+        640px : 1.7rem,
+        1024px: 2rem
+);
+
+$h3-font-sizes: (
+        null  : 1.4rem,
+        480px : 1.5rem,
+        640px : 1.6rem,
+        1024px: 1.75rem
+);
+
+$p-font-sizes: (
+        null  : 0.825rem,
+        480px : 1rem,
+        640px : 1rem,
+        1024px: 1rem
+);
+
+$big-p-font-sizes: (
+        null  : 1.3rem,
+        480px : 1.4rem,
+        640px : 1.5rem,
+        1024px: 1.7rem
+);
+
+
+
+/* END tipografy */
+/*$black: #2F3540;
+$gray: #818181;
+$gray2: #EDEDED;
+$blue: #007AFF;
+$orange: #F68B1F;
+$gray_bg: #F6F6F6;*/
+
+/* END tipografy */
+$black: #010103;
+$black2: #333c54;
+$black3: #2F3540;
+$gray: #818c96;
+$gray2: #EDEDED;
+$blue: #62d9cf;
+$blue_btn: #03d0bf;
+$purple_btn: #aa80c2;
+$orange: #fbdc72;
+$gray_bg: #F6F6F6;
+$purple: #c7aed5;
+$purple2: #836a8f;
+$red: #dbb3a4;
+$red2: #411f26;
+
+/* chrome pizdec svg background */
+
+$black_chrome: '%23010103';
+$black2_chrome: '%23333c54';
+$black3_chrome: '%232F3540';
+$gray_chrome: '%23818c96';
+$gray2_chrome: '%23EDEDED';
+$blue_chrome: '%2362d9cf';
+$orange_chrome: '%23fbdc72';
+$gray_bg_chrome: '%23F6F6F6';
+$purple_chrome: '%23c7aed5';
+$purple2_chrome: '%23836a8f';
+$red_chrome: '%23dbb3a4';
+$red2_chrome: '%23411f26';
+
+
+$radius: 3px;
+
+
+/* Grid system */
+
+$screen-xs: 0;
+$screen-sm: 540px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1440px;

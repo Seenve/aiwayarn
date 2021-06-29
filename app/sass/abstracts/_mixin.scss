@@ -1,0 +1,193 @@
+// трансформация, плавный переход
+// пример: @include transit(color,.2s,ease-in-out);
+@mixin transit($what: all, $when: 0.25s, $how: ease) {
+  -webkit-transition: $what $when $how;
+  -moz-transition: $what $when $how;
+  -ms-transition: $what $when $how;
+  -o-transition: $what $when $how;
+  transition: $what $when $how;
+}
+
+// градиент линейный
+// пример: @include grad-l($red,$black);
+@mixin grad-l($direction, $color-stops) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+// Горизонтальная линия с псевдо элементом
+// пример: @include sep-h(80%,2px,$blue);
+@mixin sep-h($w, $h, $color) {
+  &:after {
+    @include pseudo();
+    height: $h;
+    width: $w;
+    margin: 0 auto;
+    background-color: $color;
+  }
+}
+
+// эффект при наведении
+// пример: @include hov1;
+
+@mixin hov1 {
+  &:hover {
+    opacity: 0.8
+  }
+}
+
+@mixin hov2 {
+  transition: all .2s ease-out;
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    transition: all .2s ease-out;
+  }
+}
+
+@mixin hov3 {
+  transition: all .2s ease-out;
+  &:hover {
+    opacity: 0.8;
+    transition: all .2s ease-out;
+  }
+}
+
+
+
+
+
+
+/*Косые блоки*/
+
+
+// mixin
+@mixin angle($pseudo, $flip: false, $angle: 3.5deg) {
+  // Possible values for $pseudo are: before, after, both
+  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+    position: relative;
+    z-index: 1;
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+
+    #{$selector} {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 50%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    @if $pseudo == 'before' {
+      #{$selector} {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+    }
+
+    @if $pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+
+    @if $pseudo == 'both' {
+      &:before {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+
+      &:after {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+  }
+}
+
+// slanted edges here
+.edge--bottom {
+  @include angle(after);
+}
+
+.edge--bottom--reverse {
+  @include angle(after, true);
+}
+
+.edge--top {
+  @include angle(before);
+}
+
+.edge--top--reverse {
+  @include angle(before, true);
+}
+
+.edge--both {
+  @include angle(both);
+}
+
+.edge--both--reverse {
+  @include angle(both, true);
+}
+
+/*end косые блоки*/
+
+/* SVG */
+
+@mixin favorite($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#{$color}" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path d="M682.741,81.962L682.75,82l-0.157.142a5.508,5.508,0,0,1-1.009.911L675,89h-2l-6.5-5.9a5.507,5.507,0,0,1-1.188-1.078l-0.057-.052,0-.013A5.484,5.484,0,1,1,674,75.35,5.485,5.485,0,1,1,682.741,81.962ZM678.5,75a3.487,3.487,0,0,0-3.446,3H675a1,1,0,0,1-2,0h-0.054a3.491,3.491,0,1,0-5.924,2.971L667,81l7,6,7-6-0.023-.028A3.5,3.5,0,0,0,678.5,75Z" transform="translate(-664 -73)"></path></svg>');
+}
+
+@mixin close($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#{$color}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="16px" x="0px" y="0px" viewBox="0 0 20 16" style="enable-background:new 0 0 20 16;" xml:space="preserve"><g id="Слой_1"><path d="M17.3,15.2l-0.2,0.2c-0.4,0.4-0.9,0.4-1.3,0L2.6,2.1c-0.4-0.4-0.4-0.9,0-1.3l0.2-0.2c0.4-0.4,0.9-0.4,1.3,0l13.2,13.2C17.7,14.2,17.7,14.8,17.3,15.2z"/><path d="M17.1,0.7l0.2,0.2c0.4,0.4,0.4,0.9,0,1.3L4.1,15.3c-0.4,0.4-0.9,0.4-1.3,0l-0.2-0.2c-0.4-0.4-0.4-0.9,0-1.3L15.9,0.7C16.2,0.4,16.8,0.4,17.1,0.7z"/></g></svg>');
+}
+
+
+
+@mixin more($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#{$color}" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M304 256c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48zm120-48c-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48-21.5-48-48-48zm-336 0c-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48-21.5-48-48-48z"/></svg>');
+}
+
+@mixin angle-up($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#{$color}" width="22px" height="22px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z"/></svg>');
+}
+@mixin angle-down($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#{$color}" width="22px" height="22px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z"/></svg>');
+}
+
+@mixin info-circle($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#{$color}" width="20px" height="19px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 448c-110.532 0-200-89.431-200-200 0-110.495 89.472-200 200-200 110.491 0 200 89.471 200 200 0 110.53-89.431 200-200 200zm0-338c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></svg>');
+}

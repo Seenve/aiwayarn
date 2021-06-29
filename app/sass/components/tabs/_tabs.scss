@@ -1,0 +1,209 @@
+.tabs {
+    // padding: 68px 0 39px 0;
+
+    @media screen and (max-width: $screen-sm) {
+        margin-bottom: 40px;
+    }
+
+    a {
+        &:hover {
+            background-size: 0 1px;
+        }
+    }
+
+    &__top {
+        position: relative;
+        margin-bottom: 31px;
+        @media screen and (min-width: $screen-md) {
+            margin: 31px 0;
+        }
+        &:after {
+        //    @media screen and (min-width: $screen-md) { 
+                @include pseudo();
+                bottom: 0px;
+                width: 100%;
+                height: 2px;
+                background-color: $gray2;
+        //    }
+        }
+    }
+
+    &__header {
+        // display: none;
+        @media screen and (min-width: $screen-md) { 
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__btn {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-weight: bold;
+        @media screen and (min-width: $screen-md) { 
+            display: none;
+        }
+        
+        svg {
+            margin-left: 10px;
+            transition: all .4s;
+        }
+    }
+
+    &__list {
+        // @media screen and (min-width: $screen-md) {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            overflow-y: hidden;
+            min-height: 40px;
+        // }
+ 
+        @media screen and (min-width: $screen-xl) {
+            overflow: initial;
+        }
+    }
+
+    &__item {
+        margin-right: 10px;
+        a {
+            display: flex;
+            align-items: center;
+            height: 46px;
+        }
+        @media screen and (min-width: $screen-md) {
+            margin-right: 70px;
+        }
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    &__link {
+        font-size: 12px;
+        color: $gray;
+        position: relative;
+        @media screen and (min-width: $screen-md) {
+            white-space: nowrap;
+        }
+        @media screen and (min-width: $screen-xl){
+            font-size: 14px;
+        }
+        &:hover {
+            &::before {
+                background-color: $blue;
+            }
+        }
+    }
+
+    &__link.active {
+        color: $purple2;
+        &::before {
+            @include pseudo();
+            bottom: 0px;
+            width: 100%;
+            height: 2px;
+            background-color: $purple;
+            z-index: 1;
+        }
+    }
+
+
+
+    &__body {
+        margin-top: 26px;
+       
+       @media screen and (min-width: $screen-sm){ 
+            margin-top: 46px;
+       }
+       @media screen and (min-width: $screen-md){
+            margin-top: 0;
+       } 
+    }
+}
+
+
+
+
+.tab-content.def-content {
+    display: none;
+}
+
+.tab-content.def-content.active  {
+    display: block;
+}
+
+.tabs-menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 0px 40px 0px;
+    border-bottom: 2px solid $gray2;
+    ul {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        overflow-x: scroll;
+        /*margin-bottom: -14px;
+        padding-bottom: 8px;*/
+        margin-bottom: -2px;
+        li {
+            margin-right: 15px;
+            flex: none;
+            a {
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                color: $gray;
+                border-radius: $radius;
+                transition: 0.1s;
+                position: relative;
+                height: 46px;
+                line-height: 46px;
+                &:hover {
+                    color: $red2;
+                    background-size: 0 1px;
+                }
+                &:before {
+                    content: "";
+                    display: none;
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $purple2;
+                    z-index: 1;
+                }
+                i {
+                    margin-left: 5px;
+                }
+            }
+            a.active {
+                color: $purple2;
+                &:before {
+                    display: block;
+                }
+            }
+        }
+    }
+    ul::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        background-color: $gray2;
+        padding-bottom: -5px;
+        position: absolute;
+    }
+    ul::-webkit-scrollbar-thumb {
+        background-color: #bbb;
+        border-radius: 0;
+        box-shadow: inset 0px 0px 0px #f3faf7;
+    }
+    ul::-webkit-scrollbar-thumb:hover {
+        background-color: $gray;
+    }
+    &:hover {
+        
+    }
+}

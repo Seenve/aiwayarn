@@ -1,0 +1,87 @@
+@import 'node_modules/bootstrap-4-grid/scss/grid';
+@import 'node_modules/owl.carousel/src/scss/owl.carousel';
+@import 'node_modules/owl.carousel/src/scss/owl.theme.default';
+
+/* Абстрактные стили (часть которая используется постоянно) миксины, переменные для цветов итд */
+
+@import "app/sass/abstracts/variable";
+
+/* mixin */
+@import "app/sass/abstracts/mixin/mix-animation/animation";
+@import "app/sass/abstracts/mixin/mix-btn/btn";
+@import "app/sass/abstracts/mixin/mix-input/input";
+@import "app/sass/abstracts/mixin/mix-other/other";
+@import "app/sass/abstracts/mixin/mix-shadow/shadow";
+@import "app/sass/abstracts/mixin/mix-tipography/tipography";
+@import "app/sass/abstracts/mixin";
+
+/* Базовые стили */
+@import "app/sass/base/general";
+@import "app/sass/base/nprogress";
+@import "app/sass/base/tipography";
+
+/* Компоненты */
+
+@import "app/sass/components/buttons/button";
+// @import "components/forms/forms";
+// @import "components/inputs/inputs";
+// @import "components/modals/modals";
+// @import "components/notifications/notifications";
+// @import "components/table/table";
+@import "app/sass/components/form/input-compoent";
+
+@import "app/sass/components/small_ux/hamburger_menu/gamburger";
+
+/* Основные разделы */
+@import "app/sass/layout/header/header";
+@import "app/sass/layout/content/content";
+// @import "layout/sidebar/sidebar";
+@import "app/sass/layout/footer/footer";
+
+//@import "app/sass/components/modals/modal";
+
+
+
+@import 'app/sass/pages/main/hero';
+@import 'app/sass/pages/main/banner';
+@import 'app/sass/pages/main/special';
+@import 'app/sass/pages/catalog/catalog-item';
+@import 'app/sass/pages/catalog/catalog-items';
+@import 'app/sass/pages/main/main_catalog';
+//@import 'app/sass/pages/about_us/_about';
+@import 'app/sass/pages/main/news';
+@import 'app/sass/pages/main/new-products';
+@import 'app/sass/pages/reviews/reviews';
+@import 'app/sass/pages/articles/articles';
+@import 'app/sass/components/breadcrumbs/breadcrumbs';
+@import 'app/sass/components/pagination/pagination';
+@import 'app/sass/components/vacancy/vacancy';
+//@import 'app/sass/components/sidebar/sidebar'; 
+
+@import 'app/sass/components/tabs/tabs';
+
+//contact
+@import 'app/sass/pages/contact/office-loc';
+@import 'app/sass/pages/contact/office-req';
+@import 'app/sass/pages/contact/map';
+
+//about
+//@import 'app/sass/pages/about_us/_about';
+//@import 'app/sass/pages/about_us/declaration';
+//@import 'app/sass/pages/about_us/our-productions';
+
+//product 
+@import 'app/sass/pages/product/cart-product';
+@import 'app/sass/pages/product/catalog-list';
+@import 'app/sass/pages/product/cart-block-price';
+@import 'app/sass/pages/product/cart-tabs';
+
+//cart
+@import 'app/sass/pages/product/cart';
+
+//checkout
+@import 'app/sass/pages/product/checkout';
+
+//profile
+@import 'app/sass/pages/product/profile';
+

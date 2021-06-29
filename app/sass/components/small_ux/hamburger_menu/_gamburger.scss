@@ -1,0 +1,48 @@
+.nav-toogle {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    transform: rotate(0);
+    transition:.3s ease-in-out;
+    span {
+        padding: 0;
+        width: 20px;
+        height: 2px;
+        background-color: $black2; 
+        display: block;
+        transition: all 0.4s ease-in-out;
+        position: absolute; 
+        left: 8px;
+        &:nth-child(1) {
+            top: 13px;
+        }
+
+        &:nth-child(2) {
+            top: 18px;
+        }
+
+        &:nth-child(3) {
+            top: 18px;
+        }
+
+        &:nth-child(4) {
+            top: 23px;
+        }
+    }
+}
+
+.nav-toogle.active span:nth-child(1) {
+    // transform: translateX(45px);
+    background-color: transparent;
+}
+  
+.nav-toogle.active span:nth-child(2) {
+    transform: rotate(45deg); }
+  
+.nav-toogle.active span:nth-child(3) {
+    transform: rotate(-45deg); }
+  
+.nav-toogle.active span:nth-child(4) {
+    // transform: translateX(40px);
+    background-color: transparent;
+}

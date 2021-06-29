@@ -1,0 +1,29 @@
+// тень блока
+// пример: @include bsh(1px,1px,3px,0,$gray,inset);
+@mixin bsh($top, $left, $blur, $size, $color, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow: inset $top $left $blur $size $color;
+      -moz-box-shadow: inset $top $left $blur $size $color;
+      box-shadow: inset $top $left $blur $size $color;
+    }
+    @else {
+      -webkit-box-shadow: $top $left $blur $size $color;
+      -moz-box-shadow: $top $left $blur $size $color;
+      box-shadow: $top $left $blur $size $color;
+    }
+  
+  }
+  
+  
+  // тень текста
+  // пример: @include ts(1px,1px,3px,$red);
+  @mixin ts($x, $y, $blur, $color) {
+  text-shadow: $x $y $blur $color;
+  }
+  
+  
+  // тень текста (множественный эффект)
+  // пример: @include text-shadow(1px 1px 1px $red, 2px 2px 2px $green);
+  @mixin text-shadow($shadows...) {
+    text-shadow: $shadows;
+  }

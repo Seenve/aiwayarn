@@ -1,0 +1,7 @@
+.product-tabs {
+    .special__item {
+        @media screen and (min-width: $screen-md){
+            margin-right: 70px;    
+        }
+    }
+}

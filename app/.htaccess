@@ -1,0 +1,53 @@
+RewriteEngine On
+
+#RewriteCond %{SERVER_PORT} !^443$
+#RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTPS} !=off
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ https://%{SERVER_NAME} [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www.aiwayarn.com$ [NC]
+RewriteRule ^(.*)$ https://aiwayarn.com/$1 [R=301,L]
+
+ErrorDocument 400 /404
+ErrorDocument 401 /404
+ErrorDocument 403 /404
+ErrorDocument 404 /404
+ErrorDocument 500 /404
+
+<IfModule mod_php7.c>
+    #php_flag session.use_trans_sid on
+    #php_value mbstring.func_overload 2
+    #php_value mbstring.internal_encoding UTF-8
+    php_value display_errors off
+    php_value display_startup_errors off
+</IfModule>
+
+RewriteRule ^([^/\.]+)$ /index.php?page=$1 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)$ /index.php?page=$1&$1=$2 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)$ /index.php?page=$1&$1=$2&$2=$3 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)$ /index.php?page=$1&$1=$2&$2=$3&$3=$4 [L,QSA]
+
+#RewriteRule ^([^/\.]+)$ /catalog/index.php?page=$1 [L,QSA]
+#RewriteRule ^([^/\.]+)/([^/\.]+)$ /catalog/index.php?page=$1&$1=$2 [L,QSA]
+#RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)$ /catalog/index.php?page=$1&$1=$2&$2=$3 [L,QSA]
+#RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)$ /catalog/index.php?page=$1&$1=$2&$2=$3&$3=$4 [L,QSA]
+
+RewriteRule ^([^/\.]+)$ /catalog/index.php?page=$1 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)$ /catalog/index.php?page=$1&category=$2 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)$ /catalog/index.php?page=$1&$1=$2&$2=$3 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)$ /catalog/index.php?page=$1&$1=$2&$2=$3&$3=$4 [L,QSA]
+
+RewriteRule ^([^/\.]+)$ /content.php?page=$1 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)$ /content.php?page=$1&$1=$2 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)$ /content.php?page=$1&$1=$2&$2=$3 [L,QSA]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)$ /content.php?page=$1&$1=$2&$2=$3&$3=$4 [L,QSA]
+
+
+# RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)$ /index.php?page=$1&name=$2&id=$3 [L,QSA]

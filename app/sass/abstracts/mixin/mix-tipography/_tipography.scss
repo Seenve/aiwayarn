@@ -1,0 +1,49 @@
+/* tipografy */
+@mixin title($title_size:$middle_text,$title_weight:bold,$title_color:$white) {
+    font-family: "Montserrat", sans-serif;
+    font-size: $title_size;
+    font-weight: $title_weight;
+    color: $title_color;
+  }
+  @mixin text($title_size:$small_text,$title_weight:400,$title_color:$white) {
+    font-family: "Montserrat", sans-serif;
+    font-size: $title_size;
+    font-weight: $title_weight;
+    color: $title_color;
+  }
+  
+  /* mixin для адаптивного текста */
+  @mixin font-size($fs-map) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+      @if $fs-breakpoint == null {
+        font-size: $fs-font-size;
+      }
+      @else {
+        @media screen and (min-width: $fs-breakpoint) {
+          font-size: $fs-font-size;
+        }
+      }
+    }
+  }
+  
+  /*mixin для текста со своим шрифтом  или индивидуальная настройка шрифта*/
+  @mixin font-castomize($size: false, $color: false, $weight: false, $lh: false) {
+    font-family: 'Roboto', sans-serif;
+    @if $size {
+      font-size: $size;
+    }
+  
+    @if $color{
+      color: $color;
+    }
+  
+    @if $weight {
+      font-weight: $weight;
+    }
+  
+    @if $lh {
+      line-height: $lh;
+    }
+  }
+  
+  /* END tipografy */
